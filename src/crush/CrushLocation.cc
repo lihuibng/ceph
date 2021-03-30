@@ -39,7 +39,7 @@ int CrushLocation::_parse(const std::string& s)
   }
   std::lock_guard l(lock);
   loc.swap(new_crush_location);
-  lgeneric_dout(cct, 10) << "crush_location is " << loc << dendl;
+  lgeneric_dout(cct, 10) << "crush_location is (default) " << loc << dendl;
   return 0;
 }
 
