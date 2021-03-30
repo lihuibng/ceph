@@ -39,6 +39,7 @@ int CrushLocation::_parse(const std::string& s)
   }
   std::lock_guard l(lock);
   loc.swap(new_crush_location);
+  lgeneric_dout(cct, 10) << "crush_location is (default) " << loc << dendl;
   return 0;
 }
 
@@ -121,7 +122,6 @@ int CrushLocation::init_on_startup()
   loc.clear();
   loc.insert(std::make_pair<std::string,std::string>("host", hostname));
   loc.insert(std::make_pair<std::string,std::string>("root", "default"));
-  lgeneric_dout(cct, 10) << "crush_location is (default) " << loc << dendl;
   return 0;
 }
 
